@@ -1,4 +1,3 @@
-import { hello } from "../dep";
 import { formatRelative, subDays } from "date-fns";
 // runtime edge is a must otherwise this thing won't work at all (500)
 // if you change it to nodejs, then it will cause an error and the docs do not tell you that
@@ -16,7 +15,7 @@ export default function GET(request) {
       message: `Three days ago, ${formatRelative(
         subDays(new Date(), 3),
         new Date()
-      )} `,
+      )}  ${process.env.SECRET}`,
     }),
     {
       headers: new Headers({
