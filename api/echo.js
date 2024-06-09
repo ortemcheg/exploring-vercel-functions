@@ -15,7 +15,7 @@ export default function GET(request) {
       message: `Three days ago, ${formatRelative(
         subDays(new Date(), 3),
         new Date()
-      )}  ${process.env.SECRET}`,
+      )} and the secret is ${process.env.SECRET}`,
     }),
     {
       headers: new Headers({
